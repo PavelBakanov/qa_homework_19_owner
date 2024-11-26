@@ -30,8 +30,10 @@ public class TestBase {
     @AfterEach
     void tearDown() {
         Attach.screenshotAs("Последний скриншот");
-        Attach.pageSource();
-        Attach.browserConsoleLogs();
+        if (!Configuration.browser.equals("firefox")) {
+            Attach.pageSource();
+            Attach.browserConsoleLogs();
+        }
         Attach.addVideo();
         Selenide.closeWebDriver();
     }

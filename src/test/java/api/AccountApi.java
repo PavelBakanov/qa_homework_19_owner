@@ -1,5 +1,6 @@
 package api;
 
+import data.AuthData;
 import models.GetListOfBooksResponseModel;
 import models.LoginRequestModel;
 import models.LoginResponseModel;
@@ -13,9 +14,7 @@ public class AccountApi {
 
     public static LoginResponseModel getAuthorizationCookie() {
         LoginResponseModel response;
-        //LoginRequestModel request = new LoginRequestModel(System.getProperty("userName"),
-                //System.getProperty("password"));
-        LoginRequestModel request = new LoginRequestModel("maxcong","Maxcong1!");
+        LoginRequestModel request = new LoginRequestModel(AuthData.USER_NAME,AuthData.PASSWORD);
 
         response = step("Сделать запрос логина, и записать ответ", () ->
                 given(demoQaBookStoreWithJsonRequest)

@@ -28,10 +28,4 @@ public interface WebDriverConfig extends Config {
     @DefaultValue("https://user1:1234@selenoid.autotests.cloud/wd/hub")
     String getRemoteUrl();
 
-    @Key("userName")
-    String getUsername();
-
-    @Key("password")
-    String getPassword();
-
 }

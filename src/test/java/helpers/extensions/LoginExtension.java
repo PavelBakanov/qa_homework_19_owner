@@ -1,6 +1,7 @@
 package helpers.extensions;
 
 import api.AccountApi;
+import data.AuthData;
 import models.LoginResponseModel;
 import org.junit.jupiter.api.extension.BeforeEachCallback;
 import org.junit.jupiter.api.extension.ExtensionContext;
@@ -30,7 +31,7 @@ public class LoginExtension implements BeforeEachCallback {
 
         step("Проверить успешный вход в учетную запись", () -> {
                     open("/profile");
-                    $("#userName-value").scrollTo().shouldHave(text(System.getProperty("bookStoreLogin")));
+                    $("#userName-value").scrollTo().shouldHave(text(AuthData.USER_NAME));
                 }
         );
 
