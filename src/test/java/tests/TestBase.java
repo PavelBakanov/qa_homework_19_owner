@@ -13,20 +13,18 @@ import org.junit.jupiter.api.BeforeEach;
 
 public class TestBase {
 
-    private final ConfigRunner configRunner = new config.ConfigRunner();
 
     @BeforeAll
-    static void setUp() {
+    public static void setUp() {
         RestAssured.baseURI = "https://demoqa.com";
         Configuration.baseUrl = "https://demoqa.com";
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-        Configuration.holdBrowserOpen = true;
+
+        new ConfigRunner();
     }
 
     @BeforeEach
     public void beforeEach() {
-        configRunner.createWebDriver();
-
+        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
     @AfterEach

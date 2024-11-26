@@ -12,6 +12,7 @@ public class ConfigRunner {
 
     public ConfigRunner() {
         this.config = ConfigFactory.create(WebDriverConfig.class, System.getProperties());
+        createWebDriver();
     }
 
     public void createWebDriver() {
