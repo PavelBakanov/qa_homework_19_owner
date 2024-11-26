@@ -13,8 +13,9 @@ public class AccountApi {
 
     public static LoginResponseModel getAuthorizationCookie() {
         LoginResponseModel response;
-        LoginRequestModel request = new LoginRequestModel(System.getProperty("bookStoreLogin"),
-                System.getProperty("bookStorePassword"));
+        //LoginRequestModel request = new LoginRequestModel(System.getProperty("userName"),
+                //System.getProperty("password"));
+        LoginRequestModel request = new LoginRequestModel("maxcong","Maxcong1!");
 
         response = step("Сделать запрос логина, и записать ответ", () ->
                 given(demoQaBookStoreWithJsonRequest)
